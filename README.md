@@ -60,6 +60,8 @@ LOS's updater expects the build's timestamp while the generated `json` response 
 
 `touch -d @$(grep 'ro.build.date.utc' $OUT/system/build.prop | sed 's/ro\.build\.date\.utc\=//i') $OUT/lineage-VERSION-YYYYMMDD-ROMTYPE-DEVICENAME.zip`
 
+If you upload your builds via `scp`, do not forget the `-p` option.
+
 ## How it works
 
 The app will parse the client's request to find potential files. Files are firstly filtered by date.

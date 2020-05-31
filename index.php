@@ -50,7 +50,7 @@ foreach ($builds as $build) {
 
     $fullBuildPath = $root . '/builds/' . $device . '/' . $build;
 
-    if ($buildDevice == $device && $buildType == $romType && $actualDate <= $buildDate && file_exists($fullBuildPath . '.md5sum')) {
+    if (!file_exists($fullBuildPath . '.ignore') && $buildDevice == $device && $buildType == $romType && $actualDate <= $buildDate && file_exists($fullBuildPath . '.md5sum')) {
       $givenMd5 = explode('  ', file_get_contents($fullBuildPath . '.md5sum'))[0];
       $pass = false;
 

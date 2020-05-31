@@ -54,6 +54,8 @@ Alternatively, you can edit the `build.prop` file to change the value of `lineag
 
 Just create a directory in `builds/` with the codename of the device (ie. `builds/daisy/`). Upload your `.zip` files from `out/target/product/<device>/` **and** the `.md5sum` files in this directory. Keep the filename in the form of `lineage-VERSION-YYYYMMDD-ROMTYPE-DEVICENAME.zip` Make sure the server can write in the directory.
 
+You can write an empty `lineage-VERSION-YYYYMMDD-ROMTYPE-DEVICENAME.zip.ignore` while sending the file. This will prevent the updater from displaying an update not fully uploaded.
+
 ### Warning about timestamps
 
 LOS's updater expects the build's timestamp while the generated `json` response returns the timestamp of the lastest file modification. You can fix this after a successful build with:
